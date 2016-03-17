@@ -7,28 +7,31 @@ var ReactDOM = require('react-dom');
 var Backbone = require('backbone');
 
 // local
-var Header = require('./components/header.jsx');
-var ChatWindow = require('./components/chat-window.jsx');
+var User = require('./components/header.jsx');
+var ChatWindowComponents = require('./components/chat-window.jsx');
 var ChatForm = require('./components/chat-form.jsx');
 var chatModel = require('./models/chat');
 
 
 var chat = new chatModel.ChatCollection();
-
+var ChatWindow = ChatWindowComponents.ChatWindowList;
 
 
 
 ReactDOM.render(
-  React.createElement(Header),
+  React.createElement(User, {collection: chat}),
   document.getElementById('header')
 );
 
-chat.fetch().done(function(){
-  ReactDOM.render(
-    React.createElement(ChatWindow, {collection: chat}),
-    document.getElementById('message-list-container')
-  );
-});  
+setInterval(function(){
+  chat.fetch().done(function(){
+    ReactDOM.render(
+      React.createElement(ChatWindow, {collection: chat}),
+      document.getElementById('message-list-container')
+    );
+  });
+}, 20000);
+
 
 ReactDOM.render(
   React.createElement(ChatForm, {collection: chat}),

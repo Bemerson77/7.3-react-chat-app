@@ -12,7 +12,7 @@ var Chat = Backbone.Model.extend({
 
 var ChatCollection = Backbone.Collection.extend({
   model: Chat,
-  url: 'http://tiny-lasagna-server.herokuapp.com/collections/messagestest'
+  url: 'http://tiny-lasagna-server.herokuapp.com/collections/messages'
 });
 
 

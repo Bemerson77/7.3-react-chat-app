@@ -11,7 +11,7 @@ require('backbone-react-component');
 
 
 
-var HeaderComponent = React.createClass({
+var UserComponent = React.createClass({
   mixins: [Backbone.React.Component.mixin],
   render: function(){
     return (
@@ -25,7 +25,7 @@ var HeaderComponent = React.createClass({
 
         <div className="login">
           <span className="login-name">
-            Logged in as Izzbrancuh
+            Logged in as: Izzbrancuh
           </span>
         </div>
       </div>
@@ -34,4 +34,4 @@ var HeaderComponent = React.createClass({
 });
 
 
-module.exports = HeaderComponent;
+module.exports = UserComponent;

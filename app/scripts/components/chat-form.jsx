@@ -30,6 +30,7 @@ var ChatFormComponent = React.createClass({
   render: function(){
     return (
         <form className="chat-form">
+          <input className="username" name="username" type="text" placeholder="Username"/>
           <input className="input" name="content" type="text" placeholder="Chat with someone..."/>
           <button id="submit-button" className="btn btn-primary" type="submit" onClick={this.addContent}>Send</button>
         </form>
